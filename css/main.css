@@ -1,0 +1,80 @@
+/* base styles */
+
+body {
+	font-family: Arial;
+	font-size: 12px;
+	line-height: 1;
+}
+
+ol, ul {
+    list-style: none outside none;
+}
+
+a {
+	text-decoration: none;
+}
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+/* item styles */
+
+.inner {
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+
+#header {
+	background-color: #890c22;
+	background-image: url('../images/bg_strip_top.gif');
+	background-position: bottom;
+	background-repeat: repeat-x;
+	height: auto !important;
+	height: 100px;
+	min-height: 100px;
+	color: #000000;
+}
+
+#header #logo {
+    float: left;
+    margin: 25px 0 0;
+}
+
+#header_links {
+    padding: 20px 0 15px;
+    text-align: right;
+    width: auto;
+}
+#header_links a:hover {
+    background-image: url('../images/beige_arrow.png');
+    text-decoration: underline;
+}
+
+.link_list li {
+    display: inline;
+}
+
+.link_list a {
+    background-image: url("../images/red_arrow.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 10px;
+    padding-left: 12px;
+}
+
+#banner {
+	margin: 10px 0 0;
+}
+
+#content {
+	background-color: #f3f0df;
+	background-image: url("../images/hp_bg_strip.gif");
+	background-repeat: repeat-x;
+	color: #000000;
+	height: auto !important;
+	min-height: 200px;
+}
