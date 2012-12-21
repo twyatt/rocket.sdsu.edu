@@ -3,13 +3,22 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta charset="utf-8">
+		
 		<title>SDSU Rocket Project</title>
+		
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link href="css/reset.css" media="screen" rel="stylesheet" type="text/css" />
 		<link href="css/main.css" media="screen" rel="stylesheet" type="text/css" />
 <?php if ($page != '') { ?>
 		<link href="css/subpage.css" media="screen" rel="stylesheet" type="text/css" />
 <?php } ?>
+
+		<!--[if !IE 7]>
+			<style type="text/css">
+				#wrap {display:table;height:100%}
+			</style>
+		<![endif]-->
+		
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 		<script type="text/javascript">
 			google.load("feeds", "1");
@@ -19,68 +28,75 @@
 	</head>
 	
 	<body>
-		<div id="header">
-			<div class="inner">
-				<a href="index" id="logo">
-					<img alt="San Diego State University Rocket Project" src="images/logo_rocket_project.gif">
-				</a>
-				
-				<div id="header_links">
-					<ul>
-						<li class="first">
-							<a href="join">Join</a>
-						</li>
-						<li>
-							<a href="members">Members</a>
-						</li>
-						<li>
-							<a href="donate">Donate</a>
-						</li>
-					</ul>
-				</div>
+		<div id="wrap">
+			<div id="header">
+				<div class="inner">
+					<a href="index" id="logo">
+						<img alt="San Diego State University Rocket Project" src="images/logo_rocket_project.gif">
+					</a>
+					
+					<div id="header_links">
+						<ul>
+							<li class="first">
+								<a href="join">Join</a>
+							</li>
+							<li>
+								<a href="members">Members</a>
+							</li>
+							<li>
+								<a href="donate">Donate</a>
+							</li>
+						</ul>
+					</div>
 				
 <?php if ($page == 'home') { ?>
-				<div id="banner">
-					<div class="description">
-						<h3>Rocketeers</h3>
-						<div class="item_content">
-							Rocket Project featured on the SDSU homepage!
-						</div>
-						<div class="item_more">
-							<a href="http://newscenter.sdsu.edu/sdsu_newscenter/news.aspx?s=73975">Read More</a>
+					<div id="banner">
+						<div class="description">
+							<h3>Rocketeers</h3>
+							<div class="item_content">
+								Rocket Project featured on the SDSU homepage!
+							</div>
+							<div class="item_more">
+								<a href="http://newscenter.sdsu.edu/sdsu_newscenter/news.aspx?s=73975">Read More</a>
+							</div>
 						</div>
 					</div>
-				</div>
 <?php } ?>
+				</div>
 			</div>
-		</div>
-		
-		<div id="content">
-			<div class="inner">
-				<ul class="main_links">
-					<li class="first">
-						<a href="about">About</a>
-					</li>
-					<li>
-						<a href="rockets">Rockets</a>
-					</li>
-					<li>
-						<a href="schedule">Market</a>
-					</li>
-					<li>
-						<a href="sponsors">Sponsors</a>
-					</li>
-					<li class="last">
-						<a href="contact">Contact Us</a>
-					</li>
-				</ul>
+			
+			
+			<div id="content">
+				<div class="inner">
+					<ul class="main_links">
+						<li class="first">
+							<a href="about">About</a>
+						</li>
+						<li>
+							<a href="rockets">Rockets</a>
+						</li>
+						<li>
+							<a href="schedule">Market</a>
+						</li>
+						<li>
+							<a href="sponsors">Sponsors</a>
+						</li>
+						<li class="last">
+							<a href="contact">Contact Us</a>
+						</li>
+					</ul>
 				
 <?php echo $content; ?>
 
+				</div>
 			</div>
 		</div>
 		
 		<div id="footer">
+			<div id="footer_separator">
+				<div class="inner"></div>
+			</div>
+			
 			<div class="inner">
 				<div id="footer_left" class="column">
 					<div id="social">

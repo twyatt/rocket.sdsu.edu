@@ -1,3 +1,26 @@
+/* sticky-footer: http://www.cssstickyfooter.com/ */
+
+html, body {height: 100%;}
+
+#wrap {min-height: 100%;}
+
+#main {overflow:auto;
+	padding-bottom: 180px;}  /* must be same height as the footer */
+
+#footer {position: relative;
+	margin-top: -180px; /* negative value of footer height */
+	height: 180px;
+	clear:both;} 
+
+/*Opera Fix*/
+body:before {
+	content:"";
+	height:100%;
+	float:left;
+	width:0;
+	margin-top:-32767px;/
+}
+
 /* base styles */
 
 body {
@@ -136,9 +159,11 @@ a:hover {
 }
 
 .content_container {
-	border-left: 1px dotted #5D5D5D;
-	border-right: 1px dotted #5D5D5D;
+	background-color: #FFFFFF;
+	background-image: url("../images/dotted_border.gif");
 	padding: 15px;
+	height: auto !important;
+	min-height: 200px;
 }
 
 ul.main_links {
@@ -313,20 +338,25 @@ ul.main_links li.last {
 
 #footer {
 	background-color: #25292C;
-	border-top: 11px solid #33373A;
 	color: #FFFFFF;
-	height: auto !important;
-	min-height: 200px;
+	height: 180px;
 	text-align: left;
 }
 #footer .inner {
     background-color: #33373A;
-    border-top: 11px solid #414649;
     color: #FFFFFF;
-    height: auto !important;
-    margin-top: -11px;
-    min-height: 200px;
+    height: 169px;
     position: relative;
+}
+#footer_separator {
+	height: 11px;
+	background-color: #33373A;
+}
+#footer_separator .inner {
+	width: 960px;
+	height: 11px;
+	margin: 0 auto;
+	background-color: #414649;
 }
 #footer_left {
     width: 255px;
@@ -348,8 +378,7 @@ ul.main_links li.last {
 }
 #footer .column {
     float: left;
-    margin: 20px 0;
-    padding: 0 20px;
+    padding: 10px 20px;
 }
 
 #footer .link_group {
