@@ -135,6 +135,12 @@ a:hover {
 	min-height: 200px;
 }
 
+.content_container {
+	border-left: 1px dotted #5D5D5D;
+	border-right: 1px dotted #5D5D5D;
+	padding: 15px;
+}
+
 ul.main_links {
 	display: block;
 	background-color: #353535;
@@ -206,7 +212,7 @@ ul.main_links li.last {
 	position: relative;
 }
 
-#content .inner {
+#master_columns {
     background-image: url("../images/3color_bg.gif");
     background-repeat: repeat-y;
 }
