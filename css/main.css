@@ -1,26 +1,3 @@
-/* sticky-footer: http://www.cssstickyfooter.com/ */
-
-html, body {height: 100%;}
-
-#wrap {min-height: 100%;}
-
-#main {overflow:auto;
-	padding-bottom: 180px;}  /* must be same height as the footer */
-
-#footer {position: relative;
-	margin-top: -180px; /* negative value of footer height */
-	height: 180px;
-	clear:both;} 
-
-/*Opera Fix*/
-body:before {
-	content:"";
-	height:100%;
-	float:left;
-	width:0;
-	margin-top:-32767px;/
-}
-
 /* base styles */
 
 body {
@@ -66,14 +43,18 @@ a:hover {
     width: 960px;
 }
 
+#wrap {
+	background-image: url("../images/dotted_border.gif");
+	background-repeat: repeat-y;
+	background-position: 50% 0;
+}
+
 #header {
+	height: 100px;
 	background-color: #890C22;
 	background-image: url('../images/bg_strip_top.gif');
 	background-position: bottom;
 	background-repeat: repeat-x;
-	height: auto !important;
-	height: 100px;
-	min-height: 100px;
 	color: #000000;
 }
 
@@ -154,16 +135,12 @@ a:hover {
 	background-image: url("../images/hp_bg_strip.gif");
 	background-repeat: repeat-x;
 	color: #000000;
-	height: auto !important;
-	min-height: 200px;
 }
 
 .content_container {
 	background-color: #FFFFFF;
 	background-image: url("../images/dotted_border.gif");
 	padding: 15px;
-	height: auto !important;
-	min-height: 200px;
 }
 
 ul.main_links {
@@ -338,9 +315,6 @@ ul.main_links li.last {
 
 #footer {
 	background-color: #25292C;
-	color: #FFFFFF;
-	height: 180px;
-	text-align: left;
 }
 #footer .inner {
     background-color: #33373A;

@@ -1,0 +1,35 @@
+body {
+	font-family: Arial;
+	font-size: 12px;
+	line-height: 1.3em;
+}
+
+ol, ul {
+    list-style: none outside none;
+}
+
+h2 {
+    font-size: 1.3em;
+    margin: 0 0 0.8em;
+}
+h2 a, h3 a {
+	color: #000000;
+	text-decoration: none;
+}
+h2 a:hover, h3 a:hover {
+	color: #990610;
+	text-decoration: underline;
+}
+
+a {
+	text-decoration: none;
+}
+a:hover {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.inner {
+	width: 960px;
+	margin: 0 auto;
+}

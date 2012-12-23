@@ -1,0 +1,31 @@
+body {
+	background-color: #F4F5F4;
+}
+
+#wrap,
+#content .border {
+	background-image: url('../images/dotted_border_filled.gif');
+	background-repeat: repeat-y;
+	background-position: 50% 0;
+}
+
+#header .inner {
+	height: 101px;
+}
+
+#menu {
+	height: 47px;
+	background-image: url('../images/sp_bg_strip_menu.gif');
+	background-repeat: repeat-x;
+}
+
+#content .border {
+	min-height: 168px; /* match side background image height */
+}
+#content .background {
+	background-image: url('../images/sp_bg_strip_side.gif');
+	background-repeat: repeat-x;
+}
+#content .border {
+	padding: 10px;
+}

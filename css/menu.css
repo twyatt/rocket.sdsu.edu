@@ -1,0 +1,37 @@
+ul.main_links {
+	display: block;
+	background-color: #353535;
+	border-top: 12px solid #CBB87D;
+	color: #FFFFFF;
+	height: 35px;
+}
+ul.main_links a {
+	background-color: #1F1F1F;
+	background-image: url("../images/beige_arrow.png");
+	background-position: 10px center;
+	background-repeat: no-repeat;
+	color: #ffffff;
+	display: block;
+	font-family: Georgia;
+	font-size: 1.3em;
+	height: 13px;
+	padding: 11px 0 11px 20px;
+}
+ul.main_links a:hover {
+	background-color: #BBBBBB;
+	background-image: url("../images/red_arrow1.png");
+	color: #000000;
+	text-decoration: none;
+}
+ul.main_links li {
+	border-right: 1px dotted #CBB87D;
+	float: left;
+	line-height: 1.1em;
+	overflow: hidden;
+	padding: 0;
+	width: 189px;
+}
+ul.main_links li.last {
+	border-right: medium none;
+	width: 200px;
+}

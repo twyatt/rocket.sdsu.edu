@@ -8,6 +8,7 @@
 		
 		<link rel="shortcut icon" href="favicon.ico" />
 		<link href="css/reset.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="css/sticky.css" media="screen" rel="stylesheet" type="text/css" />
 		<link href="css/main.css" media="screen" rel="stylesheet" type="text/css" />
 <?php if ($page != '') { ?>
 		<link href="css/subpage.css" media="screen" rel="stylesheet" type="text/css" />
@@ -64,7 +65,6 @@
 <?php } ?>
 				</div>
 			</div>
-			
 			
 			<div id="content">
 				<div class="inner">
@@ -137,12 +137,12 @@
 							<a href="http://newscenter.sdsu.edu/experts/directory.aspx">Media Relations</a>
 						</li>
 					</ul>
-					
-					<div class="clear"></div>
 				</div>
+				
 				<div id="footer_center" class="column">
 					
 				</div>
+				
 				<div id="footer_right" class="column">
 					
 				</div>
