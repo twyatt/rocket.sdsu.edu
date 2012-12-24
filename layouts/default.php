@@ -27,12 +27,12 @@
 			</style>
 		<![endif]-->
 		
+<?php if ($page == 'home') { ?>
+ 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script type="text/javascript">
-			google.load("feeds", "1");
-			google.load("jquery", "1.8.3");
-			google.load("jqueryui", "1.9.2");
-		</script>
+		<script type="text/javascript" src="scripts/home.js"></script>
+		<script src="https://apis.google.com/js/client.js?onload=initialize_events"></script>
+<?php } ?>
 	</head>
 	
 	<body>
