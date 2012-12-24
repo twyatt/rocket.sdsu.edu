@@ -13,13 +13,13 @@ html, body {
 
 #content {
 	overflow: auto;
-	padding-bottom: 200px; /* must be same as the footer height */
+	padding-bottom: 174px; /* must be same as the footer height */
 }
 
 #footer {
 	position: relative;
-	margin-top: -200px; /* negative value of footer height */
-	height: 200px;
+	margin-top: -174px; /* negative value of footer height */
+	height: 174px; /* footer separator height + footer inner height */
 	clear: both;
 }
 

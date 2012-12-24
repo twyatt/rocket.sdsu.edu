@@ -13,19 +13,13 @@ body {
 	height: 101px;
 }
 
-#menu {
-	height: 47px;
-	background-image: url('../images/sp_bg_strip_menu.gif');
-	background-repeat: repeat-x;
-}
-
 #content .border {
-	min-height: 168px; /* match side background image height */
+	min-height: 128px; /* side background image height - content border padding x 2 */
 }
-#content .background {
-	background-image: url('../images/sp_bg_strip_side.gif');
+#content .content-container {
+	background-image: url('../images/sp_bg_strip_side.gif'); /* height = 168px */
 	background-repeat: repeat-x;
 }
 #content .border {
-	padding: 10px;
+	padding: 20px;
 }

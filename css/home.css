@@ -1,0 +1,181 @@
+#banner {
+	background-image: url("../images/00129-hf-rockets.jpg");
+	width: 960px;
+	height: 400px;
+	margin: 40px 0 0;
+}
+
+#banner .description {
+	color: #FFFFFF;
+	float: left;
+	margin-left: 15px;
+}
+#banner .description {
+	background-image: url("../images/slide_box_fade.png");
+	background-repeat: repeat;
+	padding: 15px 10px 20px 20px;
+	position: relative;
+	top: 50px;
+	width: 190px;
+}
+#banner .description h3 {
+	font-family: Georgia;
+	line-height: 1.1em;
+	font-size: 2.5em;
+	font-weight: normal;
+}
+#banner .description .item-content {
+	margin: 5px 0 0;
+}
+#banner .description .item-more a {
+    background-image: url("../images/red_arrow1.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: 0 0 0 10px;
+    text-decoration: underline;
+}
+#banner .description a:hover {
+	background-image: url("../images/beige_arrow.png");
+	text-decoration: none;
+}
+
+
+#master-content-left, #master-content-center, #master-content-right {
+	color: #000000;
+	float: left;
+	overflow-x: hidden;
+	padding: 15px 20px;
+}
+#master-content-center, #master-content-right,
+#master-content-center a, #master-content-right a {
+	color: #FFFFFF;
+}
+#master-content-left h2, #master-content-center h2, #master-content-right h2 {
+	font-weight: bold;
+}
+#master-content-left {
+	border-top: 12px solid #E8E4D8;
+	background-color: #F7F5ED;
+	width: 390px;
+}
+#master-content-center {
+	border-top: 12px solid #580000;
+	background-color: #660000;
+	width: 235px;
+}
+#master-content-right {
+	border-top: 12px solid #3A2D0A;
+	background-color: #281F04;
+	width: 215px;
+}
+
+.content-container {
+    background-image: url("../images/hp_bg_strip.gif");
+    background-repeat: repeat-x;
+    background-color: #F4EFDF;
+}
+
+.container {
+	position: relative;
+}
+
+#master-columns {
+    background-image: url("../images/3color_bg.gif");
+    background-repeat: repeat-y;
+}
+
+#master-content-left .more-right {
+	color: #990610;
+}
+#master-content-center .more-right {
+	color: #FFD3CB;
+}
+#master-content-right .more-right {
+	color: #D3C28D;
+}
+.more-right {
+	vertical-align: baseline;
+	background-image: url("../images/red_arrow.png");
+	background-position: left center;
+	background-repeat: no-repeat;
+	padding: 0 0 0 12px;
+	position: absolute;
+	right: 0;
+	top: 1px;
+	text-align: right;
+	display: block;
+}
+.more-right:hover {
+	background-image: url("../images/red_arrow1.png");
+}
+
+.news-item .date, .news-title, .news-description {
+	margin-left: 130px;
+}
+.news-item {
+	background-color: #EBE5CF;
+	color: #000000;
+	margin-bottom: 10px;
+	padding: 5px;
+}
+.news-image {
+	background-color: #FFFFFF;
+	border: 1px solid #C4B480;
+	color: #000000;
+	float: left;
+	margin-right: 5px;
+	padding: 4px;
+	position: relative;
+	width: 110px;
+}
+.news-title {
+	font-family: Georgia;
+	font-size: 1.3em;
+	font-weight: normal;
+	line-height: 1.3em;
+	margin-bottom: 5px;
+	padding-left: 0;
+}
+.news-title a {
+	color: #990610;
+	text-decoration: none;
+}
+.news-title a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+
+.event-item {
+	background-image: url("../images/red_arrow1.png");
+	background-position: 0 0.3em;
+	background-repeat: no-repeat;
+	color: #000000;
+	margin: 0;
+	padding: 0 0 0 10px;
+	position: relative;
+}
+.event-title {
+	font-size: 1.1em;
+	margin-bottom: 0;
+	font-family: Georgia;
+    font-weight: normal;
+    line-height: 1.3em;
+}
+.event-item-separator {
+	border-bottom: 1px dotted #C1B67E;
+	display: block;
+	height: 0;
+	margin: 10px 0;
+}
+.date {
+    font-weight: bold;
+    font-size: 80%;
+}
+#master-content-left .date {
+    color: #6E653A;
+}
+#master-content-center .date {
+	color: #DAC792;
+}
