@@ -1,7 +1,9 @@
+<div class="page">
+<h1>Contact Us</h2>
+
 <form enctype="multipart/form-data" action="http://www.weebly.com/weebly/apps/formSubmit.php" method="POST" id="form-910860352579207539">
 <div id="910860352579207539-form-parent" class="wsite-form-container" style="margin-top:10px;">
   <ul class="formlist" id="910860352579207539-form-list">
-    <h2 style="text-align:left;">Contact Us</h2>
 
 <div><div class="wsite-form-field" style="margin:5px 0px 5px 0px; width:380px;">
   <label class="wsite-form-label" for="input-690723512711238153">Name <span class="form-required">*</span></label>
@@ -47,3 +49,5 @@
   <input type='submit' style='position:absolute;top:0;left:-9999px;width:1px;height:1px' /><a class='wsite-button' onclick="document.getElementById('form-910860352579207539').submit()"><span class='wsite-button-inner'>Submit</span></a>
 </div>
 </form>
+
+</div>

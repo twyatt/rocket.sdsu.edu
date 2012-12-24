@@ -27,7 +27,7 @@
 							<a href="gallery">Gallery</a>
 						</li>
 						<li>
-							<a href="location">Meetings Location</a>
+							<a href="meetings">Meetings</a>
 						</li>
 					</ul>
 				</div>

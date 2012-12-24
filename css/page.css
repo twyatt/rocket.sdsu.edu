@@ -1,3 +1,5 @@
+/* common */
+
 body {
 	background-color: #F4F5F4;
 }
@@ -22,4 +24,28 @@ body {
 }
 #content .border {
 	padding: 20px;
+}
+
+.page h1 {
+	font-size: 18px;
+	font-weight: bold;
+	padding-bottom: 15px;
+}
+
+/* sponsors page */
+
+.sponsors {
+	text-align: center;
+}
+
+.sponsor {
+	display: inline-block;
+	width: 260px;
+	height: 175px;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.sponsor-link:hover {
+	text-decoration: none;
 }
