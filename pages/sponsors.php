@@ -1,3 +1,7 @@
+<?php
+$title = 'Sponsors';
+?>
+
 <div class="page">
 	<h1>Sponsors</h1>
 	

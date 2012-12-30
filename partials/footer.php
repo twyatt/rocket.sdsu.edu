@@ -18,7 +18,7 @@
 					
 					<ul class="footer-links">
 						<li>
-							<a href="news">News</a>
+							<a href="http://sdsurocketproject.blogspot.com/" target="_blank">News</a>
 						</li>
 						<li>
 							<a href="events">Events</a>

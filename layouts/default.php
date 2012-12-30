@@ -1,3 +1,6 @@
+<?php
+$title = 'SDSU Rocket Project' . (empty($title) ? '' : " - $title");
+?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -5,7 +8,7 @@
 		<meta charset="utf-8">
 		<link rel="shortcut icon" href="favicon.ico" />
 		
-		<title>SDSU Rocket Project</title>
+		<title><?php echo $title; ?></title>
 		
 		<!-- <link href="css/all.css" media="screen" rel="stylesheet" type="text/css" /> -->
 		<link href="css/reset.css" media="screen" rel="stylesheet" type="text/css" />

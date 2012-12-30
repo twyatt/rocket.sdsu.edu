@@ -71,10 +71,20 @@
 	width: 215px;
 }
 
-.content-container {
+#content {
     background-image: url("../images/hp_bg_strip.gif");
     background-repeat: repeat-x;
-    background-color: #F4EFDF;
+	background-color: #F4EFE0;
+}
+
+#content .border {
+	min-height: 313px;
+}
+
+.content-container {
+	background-image: url("../images/3color_bg.gif");
+	background-repeat: repeat-y;
+	background-position: 50% 0;
 }
 
 .container {
