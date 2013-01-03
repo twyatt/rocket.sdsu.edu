@@ -31,7 +31,7 @@ function formatAMPM(date) {
 
 function initialize_news() {
 	var feed = new google.feeds.Feed("http://sdsurocketproject.blogspot.com/feeds/posts/default?alt=rss");
-	feed.setNumEntries(2);
+	feed.setNumEntries(3);
 	
 	feed.load(function(result) {
 		if (!result.error) {
@@ -47,11 +47,25 @@ function initialize_news() {
 				console.log('contentSnippet: ' + entry.contentSnippet);
 				*/
 				
+				// parse for first image in blog entry to use as thumbnail image
+				var images = $(entry.content).find('img');
+				var img;
+				if (images.length == 0) {
+					// blog entry has no images, so we use a generic news item image
+					img = 'images/news_item.jpg';
+				} else {
+					img = images.first().attr('src');
+				}
+				
 				var date = new Date(entry.publishedDate);
+				var dateText = date.getMonthName() + ' ' + date.getDate();
+				if (date.getFullYear() != new Date().getFullYear()) {
+					dateText += ', ' + date.getFullYear();
+				}
 				
 				var item = $('<div class="news-item"></div>');
-				var image = $('<img src="http://newscenter.sdsu.edu/sdsu_newscenter/images/stories/thumbnails/wide/201212030951_rockets150v.jpg" class="news-image" alt="Project members carry the 18-foot rocket to the launchpad. Photo by Daniel Silva">');
-				var publishedDate = $('<div class="date">' + date.getMonthName() + ' ' + date.getDate() + '</div>');
+				var image = $('<img src="' + img + '" class="news-image" style="width: 110px; height: 73px;" width="110" height="73" alt="News Item">');
+				var publishedDate = $('<div class="date">' + dateText + '</div>');
 				var title = $('<div class="news-title"><a href="' + entry.link + '" target="_blank">' + entry.title + '</a></div>');
 				var description = $('<div class="news-description">' + entry.contentSnippet + '</div>');
 				var clear = $('<div class="clear"></div>');

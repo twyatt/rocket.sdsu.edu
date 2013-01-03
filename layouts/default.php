@@ -10,7 +10,6 @@ $title = 'SDSU Rocket Project' . (empty($title) ? '' : " - $title");
 		
 		<title><?php echo $title; ?></title>
 		
-		<!-- <link href="css/all.css" media="screen" rel="stylesheet" type="text/css" /> -->
 		<link href="css/reset.css" media="screen" rel="stylesheet" type="text/css" />
 		<link href="css/sticky.css" media="screen" rel="stylesheet" type="text/css" />
 		<link href="css/common.css" media="screen" rel="stylesheet" type="text/css" />

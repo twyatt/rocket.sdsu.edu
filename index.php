@@ -1,7 +1,7 @@
 <?php
 define('DEBUG', false);
 
-require_once('application/router.php');
+require_once('application/Router.php');
 Router::addRoute(
 	'GET',
 	'/^\/([\d\w]*)/i',

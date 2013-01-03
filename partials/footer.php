@@ -39,7 +39,9 @@
 				<div id="footer-right" class="column">
 					<div id="location">
 						<p>
-							<img width="129" height="31" border="0" title="San Diego State University" alt="San Diego State University" src="images/footer_sdsu_logo.gif">
+							<a href="http://www.sdsu.edu">
+								<img width="129" height="31" border="0" title="San Diego State University" alt="San Diego State University" src="images/footer_sdsu_logo.gif">
+							</a>
 						</p>
 						<p>
 							<br />
@@ -47,11 +49,6 @@
 							5500 Campanile Drive<br />
 							San Diego, CA 92182<br />
 							<br />
-						</p>
-						<p>
-							<a href="mobile">
-								<font color="#cccc99">Mobile Website</font>
-							</a>
 						</p>
 					</div>
 				</div>

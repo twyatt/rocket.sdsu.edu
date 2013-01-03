@@ -1,6 +1,7 @@
 				<div class="inner">
 					<a href="index" id="logo">
-						<img alt="San Diego State University Rocket Project" src="images/logo_rocket_project.gif">
+						<img alt="San Diego State University" src="images/logo_sdsu.gif">
+						<!-- <img alt="San Diego State University Rocket Project" src="images/logo_rocket_project.gif"> -->
 					</a>
 					
 					<div id="header-links">
