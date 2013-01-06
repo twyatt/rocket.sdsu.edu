@@ -7,13 +7,20 @@ class Router {
 
 	public static $_routes = array();
 	
+	/**
+	 * Add route.
+	 *
+	 * @param string,array $method May be either a string or array of strings.
+	 * @param string       $url
+	 * @param array        $parts  Defines how regex matches should be labeled.
+	 */
 	public function addRoute($method, $url, $parts) {
 		if (empty($method)) {
 			$method = 'GET';
 		}
 		
 		self::$_routes[] = array(
-			'method' => strtoupper($method),
+			'method' => $method,
 			'url'    => $url,
 			'parts'  => $parts
 		);
@@ -25,7 +32,21 @@ class Router {
 		}
 		
 		foreach (self::$_routes as $route) {
-			if ($route['method'] == strtoupper($method)) {
+			$method_match = false;
+					
+			if (is_array($route['method'])) {
+				foreach ($route['method'] as $route_method) {
+					if (strtoupper($method) == strtoupper($route_method)) {
+						$method_match = true;
+					}
+				}
+			} else {
+				if (strtoupper($method) == strtoupper($route['method'])) {
+					$method_match = true;
+				}
+			}
+			
+			if ($method_match) {
 				$m = array();
 				if (preg_match($route['url'], $url, $m)) {
 					foreach ($route['parts'] as $key => $value) {

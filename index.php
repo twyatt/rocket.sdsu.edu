@@ -1,27 +1,12 @@
 <?php
-define('DEBUG', false);
-
+require_once('application/config.php');
 require_once('application/Router.php');
-Router::addRoute(
-	'GET',
-	'/^\/([\d\w]*)/i',
-	array(
-		1 => 'page',
-	)
-);
 
 $method  = $_SERVER['REQUEST_METHOD'];
-$url     = substr($_SERVER['REQUEST_URI'], strlen('/~travis/rocket.sdsu.edu'));
+$url     = $_SERVER['REQUEST_URI'];
 $matches = array();
 
-if (DEBUG) {
-	echo "<pre>";
-	echo "method: $method\n";
-	echo "url: $url\n";
-}
-
 if (Router::match($method, $url, $matches)) {
-	if (DEBUG) echo "MATCH\n";
 	extract($matches, EXTR_SKIP);
 	
 	if (empty($page) || $page == 'index') {
@@ -33,13 +18,7 @@ if (Router::match($method, $url, $matches)) {
 		$file = 'pages/404.php';
 	}
 } else {
-	if (DEBUG) echo "NO MATCH\n";
 	$file = 'pages/404.php';
-}
-
-if (DEBUG) {
-	echo "file: $file\n";
-	exit();
 }
 
 ob_start();

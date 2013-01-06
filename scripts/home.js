@@ -52,7 +52,7 @@ function initialize_news() {
 				var img;
 				if (images.length == 0) {
 					// blog entry has no images, so we use a generic news item image
-					img = 'images/news_item.jpg';
+					img = 'images/news_item.png';
 				} else {
 					img = images.first().attr('src');
 				}

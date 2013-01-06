@@ -1,53 +1,69 @@
+<?php
+require_once('plugins/recaptchalib.php');
+require_once('plugins/ContactForm.php');
+$title = 'Contact Us';
+
+if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST') {
+	$missing = false;
+	
+	if (empty($_REQUEST['fname'])) {
+		$missing = true;
+		echo "Missing first name.\n";
+	}
+	if (empty($_REQUEST['lname'])) {
+		$missing = true;
+		echo "Missing last name.\n";
+	}
+	if (empty($_REQUEST['email'])) {
+		$missing = true;
+		echo "Missing email.\n";
+	}
+	
+	if ($missing) {
+		header('HTTP/1.0 400 Bad Request');
+	} else {
+		$contact = new ContactForm();
+		
+		$contact->subject = 'SDSU Rocket Project Contact Form';
+		$contact->firstNameField = 'fname';
+		$contact->lastNameField = 'fname';
+		$contact->emailField = 'email';
+		$contact->otherFields = array(
+			'comments' => 'Comments',
+		);
+		
+		if ($contact->send(CONTACT_EMAIL)) {
+			echo "OK";
+		} else {
+			header('HTTP/1.0 500 Internal Server Error');
+			echo "Failed to send email.\n";
+		}
+	}
+	
+	exit();
+}
+?>
+
 <div class="page">
 <h1>Contact Us</h2>
 
-<form enctype="multipart/form-data" action="http://www.weebly.com/weebly/apps/formSubmit.php" method="POST" id="form-910860352579207539">
-<div id="910860352579207539-form-parent" class="wsite-form-container" style="margin-top:10px;">
-  <ul class="formlist" id="910860352579207539-form-list">
-
-<div><div class="wsite-form-field" style="margin:5px 0px 5px 0px; width:380px;">
-  <label class="wsite-form-label" for="input-690723512711238153">Name <span class="form-required">*</span></label>
-  <div style="clear:both;"></div>
-  <div class="wsite-form-input-container wsite-form-left">
-    <input id="input-690723512711238153" class="wsite-form-input wsite-input" type="text" name="_u690723512711238153[first]" style="width:138px;" />
-    <label class="wsite-form-sublabel" for="input-690723512711238153">First</label>
-  </div>
-  <div class="wsite-form-input-container wsite-form-right">
-    <input id="input-690723512711238153-1" class="wsite-form-input wsite-input" type="text" name="_u690723512711238153[last]" style="width:205px;" />
-    <label class="wsite-form-sublabel" for="input-690723512711238153-1">Last</label>
-  </div>
-  <div id="instructions-690723512711238153" class="wsite-form-instructions" style="display:none;"></div>
-</div>
-<div style="clear:both;"></div>
-
-</div>
-
-<div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
-  <label class="wsite-form-label" for="input-627859491581765685">Email <span class="form-required">*</span></label>
-  <div class="wsite-form-input-container">
-    <input id="input-627859491581765685" class="wsite-form-input wsite-input" type="text" name="_u627859491581765685" style="width:370px;" />
-  </div>
-  <div id="instructions-627859491581765685" class="wsite-form-instructions" style="display:none;"></div>
-</div></div>
-
-<div><div class="wsite-form-field" style="margin:5px 0px 5px 0px;">
-  <label class="wsite-form-label" for="input-802448045826746157">Comment <span class="form-required">*</span></label>
-  <div class="wsite-form-input-container">
-    <textarea id="input-802448045826746157" class="wsite-form-input wsite-input" name="_u802448045826746157" style="width:370px; height: 200px"></textarea>
-  </div>
-  <div id="instructions-802448045826746157" class="wsite-form-instructions" style="display:none;"></div>
-</div></div>
-  </ul>
-</div>
-<div style="display:none; visibility:hidden;">
-  <input type="text" name="wsite_subject" />
-</div>
-<div style="text-align:left; margin-top:10px; margin-bottom:10px;">
-  <input type="hidden" name="form_version" value="2" />
-  <input type="hidden" name="wsite_approved" id="wsite-approved" value="approved" />
-  <input type="hidden" name="ucfid" value="910860352579207539" />
-  <input type='submit' style='position:absolute;top:0;left:-9999px;width:1px;height:1px' /><a class='wsite-button' onclick="document.getElementById('form-910860352579207539').submit()"><span class='wsite-button-inner'>Submit</span></a>
-</div>
+<form enctype="multipart/form-data" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST">
+	<h2>Name</h2>
+	First: <input type="text" name="fname" /><br />
+	Last: <input type="text" name="lname" /><br />
+	
+	<h2>Email</h2>
+	<input type="text" name="email" /><br />
+	
+	<h2>Comment</h2>
+	<textarea name="comments"></textarea>
+	
+<?php
+// TODO test if eon.sdsu.edu supports sending email from php
+// TODO implement form to submit to php-based email script
+echo recaptcha_get_html(RECAPTCHA_PUBLIC_KEY);
+?>
+	<input type="submit" value="Submit" />
 </form>
 
 </div>
