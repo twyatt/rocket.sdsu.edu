@@ -29,12 +29,7 @@ $title = 'SDSU Rocket Project' . (empty($title) ? '' : " - $title");
 			</style>
 		<![endif]-->
 		
-<?php if ($page == 'home') { ?>
- 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-		<script type="text/javascript" src="scripts/home.js"></script>
-		<script src="https://apis.google.com/js/client.js?onload=initialize_events"></script>
-<?php } ?>
+<?php echo $head; ?>
 	</head>
 	
 	<body>
