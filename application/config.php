@@ -1,6 +1,8 @@
 <?php
-define('RECAPTCHA_PUBLIC_KEY', '6LcRItsSAAAAAB7ZJ8vRmYv-2rHWqkZPLWw7_JyH');
+define('RECAPTCHA_PUBLIC_KEY',  '6LcRItsSAAAAAB7ZJ8vRmYv-2rHWqkZPLWw7_JyH');
 define('RECAPTCHA_PRIVATE_KEY', '6LcRItsSAAAAAFfYkjmxCU1JO-OWwXQhT2ElUvWt');
+
+define('CONTACT_SUBJECT', 'SDSU Rocket Project Contact Form');
 
 if (file_exists('.development')) {
 	define('CONTACT_EMAIL', 'travis.i.wyatt@gmail.com');

@@ -1,93 +1,61 @@
 <?php
-require_once('plugins/recaptchalib.php');
+require_once('plugins/Recaptcha.php');
 require_once('plugins/ContactForm.php');
+
 $title = 'Contact Us';
+$head = <<<EOT
+<link href="css/contact.css" media="screen" rel="stylesheet" type="text/css" />
+EOT;
+$contact = new ContactForm();
+$recaptcha = new Recaptcha(RECAPTCHA_PUBLIC_KEY, RECAPTCHA_PRIVATE_KEY);
 
 if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST') {
-	if (empty($_REQUEST['fname'])) {
-		$problems[] = 'fname';
-	}
-	if (empty($_REQUEST['lname'])) {
-		$problems[] = 'lname';
-	}
-	if (empty($_REQUEST['email'])) {
-		$problems[] = 'email';
-	}
-	$recaptcha = recaptcha_check_answer(
-		RECAPTCHA_PRIVATE_KEY,
-		$_SERVER['REMOTE_ADDR'],
-		$_REQUEST["recaptcha_challenge_field"],
-		$_REQUEST["recaptcha_response_field"]
-	);
+	$isPost = true;
 	
-	if (empty($problems) && $recaptcha->is_valid) {
-		$contact = new ContactForm();
-		
-		$contact->subject = 'SDSU Rocket Project Contact Form';
-		$contact->firstNameField = 'fname';
-		$contact->lastNameField = 'fname';
-		$contact->emailField = 'email';
-		$contact->otherFields = array(
-			'comments' => 'Comments',
-			'sentfrom' => 'Sent From',
-		);
-		
-		if ($contact->send(CONTACT_EMAIL)) {
-			echo "success('Thank you!')";
-		} else {
-			header('HTTP/1.0 500 Internal Server Error');
-			echo "Failed to send email.";
-		}
-	} else {
-		//header('HTTP/1.0 400 Bad Request');
-		
-		if (!empty($problems)) {
-			echo "error(['" . implode("', '", $problems) . "']);\n";
-		}
-		if (!$recaptcha->is_valid) {
-			echo "recaptcha('" . $recaptcha->error . "');\n";
-		}
-	}
+	$recaptchaResponse = $recaptcha->check();
 	
-	exit();
+	$contact->setFromName($_REQUEST['fname'], $_REQUEST['lname']);
+	$contact->setFromEmail($_REQUEST['email']);
+	$contact->setSubject(CONTACT_SUBJECT);
+	$sourceUri = ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+	$contact->setBody("First Name: " . $_REQUEST['fname'] . "\r\nLast Name: " . $_REQUEST['lname'] . "\r\n\r\nComments: \r\n" . $_REQUEST['comments'] . "\r\n\r\nSent Using:\r\n" . $sourceUri);
+	
+	if ($recaptchaResponse->is_valid && $contact->isValid()) {
+		$contactResult = $contact->send(CONTACT_EMAIL);
+	}
 } else { // GET
-	$head = <<<EOT
-<link href="css/contact.css" media="screen" rel="stylesheet" type="text/css" />
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="scripts/jquery.form.js"></script>
-<script type="text/javascript" src="scripts/contact.js"></script>
-EOT;
+	$isPost = false;
 }
 ?>
 
 <div class="page">
 	<h1>Contact Us</h2>
 	
-	<div id="contact_container">
+<?php if ($isPost && $contactResult) { ?>
+	Thank you!
+<?php } else { ?>
+	<div id="form-container">
 		<form id="contact" enctype="multipart/form-data" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST">
-			<h2>Name</h2>
+			<label for="fname">First Name*:</label>
+			<input id="fname" class="name <?php if ($isPost && !$contact->isFromFirstNameValid()) echo ' invalid'; ?>" type="text" name="fname" value="<?php echo addslashes($_REQUEST['fname']); ?>" /><br />
 			
-			<label for="fname">First:</label>
-			<input id="fname" class="required" type="text" name="fname" /><br />
+			<label for="lname">Last Name*:</label>
+			<input id="lname" class="name <?php if ($isPost && !$contact->isFromLastNameValid()) echo ' invalid'; ?>" type="text" name="lname" value="<?php echo addslashes($_REQUEST['lname']); ?>" /><br />
 			
-			<label for="lname">Last:</label>
-			<input id="lname" class="required" type="text" name="lname" /><br />
+			<label for="email">Email*:</label>
+			<input id="email" class="<?php if ($isPost && !$contact->isFromEmailValid()) echo 'invalid'; ?>" type="text" name="email" value="<?php echo addslashes($_REQUEST['email']); ?>" /><br />
 			
-			<label for="email">Email:</label>
-			<input id="email" class="required" type="text" name="email" /><br />
+			<label for="comments">Comments:</label>
+			<div class="clear"></div>
+			<textarea id="comments" name="comments"><?php echo $_REQUEST['comments']; ?></textarea>
 			
-			<h2>Comment</h2>
-			<textarea name="comments"></textarea>
-			
-			<div id="recaptcha">
+			<label>Spam Prevention:</label>
 <?php
-echo recaptcha_get_html(RECAPTCHA_PUBLIC_KEY);
+echo $recaptcha;
 ?>
-			</div>
 			
-			<input type="hidden" name="sentfrom" value="<?php echo ($_SERVER['SERVER_PORT'] == 443 ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>" />
-			
-			<input type="submit" value="Send" />
+			<input class="submit-button" type="submit" value="Send" />
 		</form>
 	</div>
+<?php } ?>
 </div>
