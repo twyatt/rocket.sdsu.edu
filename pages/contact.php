@@ -29,7 +29,7 @@ if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST') {
 ?>
 
 <div class="page">
-	<h1>Contact Us</h2>
+	<h1>Contact Us</h1>
 	
 <?php if ($isPost && $contactResult) { ?>
 	Thank you!
@@ -37,19 +37,19 @@ if (strtoupper($_SERVER['REQUEST_METHOD']) == 'POST') {
 	<div id="form-container">
 		<form id="contact" enctype="multipart/form-data" action="<?php echo $_SERVER['REQUEST_URI']; ?>" method="POST">
 			<label for="fname">First Name*:</label>
-			<input id="fname" class="name <?php if ($isPost && !$contact->isFromFirstNameValid()) echo ' invalid'; ?>" type="text" name="fname" value="<?php echo addslashes($_REQUEST['fname']); ?>" /><br />
+			<input id="fname" class="name<?php if ($isPost && !$contact->isFromFirstNameValid()) echo ' invalid'; ?>" type="text" name="fname" value="<?php echo htmlentities($_REQUEST['fname']); ?>" /><br />
 			
 			<label for="lname">Last Name*:</label>
-			<input id="lname" class="name <?php if ($isPost && !$contact->isFromLastNameValid()) echo ' invalid'; ?>" type="text" name="lname" value="<?php echo addslashes($_REQUEST['lname']); ?>" /><br />
+			<input id="lname" class="name<?php if ($isPost && !$contact->isFromLastNameValid()) echo ' invalid'; ?>" type="text" name="lname" value="<?php echo htmlentities($_REQUEST['lname']); ?>" /><br />
 			
 			<label for="email">Email*:</label>
-			<input id="email" class="<?php if ($isPost && !$contact->isFromEmailValid()) echo 'invalid'; ?>" type="text" name="email" value="<?php echo addslashes($_REQUEST['email']); ?>" /><br />
+			<input id="email" class="<?php if ($isPost && !$contact->isFromEmailValid()) echo 'invalid'; ?>" type="text" name="email" value="<?php echo htmlentities($_REQUEST['email']); ?>" /><br />
 			
 			<label for="comments">Comments:</label>
 			<div class="clear"></div>
 			<textarea id="comments" name="comments"><?php echo $_REQUEST['comments']; ?></textarea>
 			
-			<label>Spam Prevention:</label>
+			<label>Spam Prevention*:</label>
 <?php
 echo $recaptcha;
 ?>

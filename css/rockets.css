@@ -1,0 +1,55 @@
+ol {
+	list-style: decimal;
+	padding-left: 3em;
+}
+
+#content .border {
+	padding: 0;
+	min-height: 168px;
+}
+.page {
+	padding: 20px;
+}
+
+.rocket {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+
+.rocket-link h2 {
+	padding-top: 25px;
+}
+.author {
+	font-style: italic;
+	float: right;
+	padding-right: 35px;
+}
+a {
+	cursor: pointer;
+}
+
+ul.rockets {
+	width: 890px;
+	margin: 0 auto;
+}
+ul.rockets li {
+	float: left;
+	text-align: center;
+	width: 200px;
+	padding-left: 30px;
+}
+ul.rockets li.first {
+	padding-left: 0;
+}
+ul.rockets img {
+	display: block;
+}
+ul.rockets .rocket-name {
+	display: block;
+	font-size: 18px;
+	padding-top: 5px;
+}
+ul.rockets .launch-date {
+	font-size: 10px;
+	margin: 0 auto;
+}
