@@ -8,7 +8,7 @@ $title = 'Market';
 	<br />
 	<br />
 	<h2>Rocket Project T-Shirt</h2>
-	<img src="images/shirt-front.jpg" /><br />
-	<img src="images/shirt-back.jpg" /><br />
+	<img src="images/shirt-front.jpg" style="float: left;"/>
+	<img src="images/shirt-back.jpg" style="padding-left: 10px;"/><br />
 	<img src="images/shirt-design.jpg" />
 </div>

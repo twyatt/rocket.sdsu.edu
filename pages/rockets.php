@@ -36,7 +36,8 @@ EOT;
 				<a onclick="return show('phoenix');" class="rocket-link">
 					<img src="images/phoenix-thumbnail.jpg" />
 					<span class="rocket-name">Phoenix I&amp;II</span>
-					<span class="launch-date">Launch Attempt September 20, 2003</span>
+					<span class="launch-date">Launch Attempt March 6, 2004</span><br />
+					<span class="launch-date">Launch Attempt October 23, 2004</span>
 				</a>
 			</li>
 			<li class="last">

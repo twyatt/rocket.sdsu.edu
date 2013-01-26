@@ -1,5 +1,8 @@
 <?php
 $head = <<<EOT
+<link rel="alternate" type="application/atom+xml" title="SDSU Rocket Project News - Atom" href="http://sdsurocketproject.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="SDSU Rocket Project News - RSS" href="http://sdsurocketproject.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="alternate" type="application/rss+xml" title="SDSU Rocket Project Events - Atom" href="https://www.google.com/calendar/feeds/rocketproject.sdsu%40gmail.com/public/basic" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript" src="scripts/home.js"></script>
@@ -28,7 +31,7 @@ EOT;
 						<a class="more-right" href="gallery">see more pictures</a>
 					</div>
 					
-					Flickr feed coming soon.
+					Photo feed coming soon.
 				</div>
 				
 				<div class="clear"></div>
