@@ -40,10 +40,10 @@ a:hover {
 
 
 #header {
-	background-color: #890C22;
-	background-image: url('../images/bg_strip_top.gif');
-	background-position: center top;
-	background-repeat: repeat-x;
+	background-color: #000000;
+	background-image: url('../images/space.jpg');
+	background-position: center 25px;
+	background-repeat: no-repeat;
 }
 
 #header #logo {
