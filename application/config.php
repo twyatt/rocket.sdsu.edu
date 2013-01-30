@@ -1,6 +1,5 @@
 <?php
-define('RECAPTCHA_PUBLIC_KEY',  '6LcRItsSAAAAAB7ZJ8vRmYv-2rHWqkZPLWw7_JyH');
-define('RECAPTCHA_PRIVATE_KEY', '6LcRItsSAAAAAFfYkjmxCU1JO-OWwXQhT2ElUvWt');
+require_once('config.private.php');
 
 define('CONTACT_SUBJECT', 'SDSU Rocket Project Contact Form');
 
