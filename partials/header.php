@@ -1,3 +1,5 @@
+				<div id="earth">
+				
 				<div class="inner">
 					<a href="index" id="logo">
 						<img alt="San Diego State University" src="images/logo_sdsu.gif">
@@ -37,4 +39,6 @@
 					<div class="inner">
 <?php include('partials/menu.php'); ?>
 					</div>
+				</div>
+				
 				</div>

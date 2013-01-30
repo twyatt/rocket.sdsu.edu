@@ -38,10 +38,13 @@ a:hover {
 	clear: both;
 }
 
-
 #header {
 	background-color: #000000;
-	background-image: url('../images/space.jpg');
+	background-image: url('../images/stars.jpg');
+	background-repeat: repeat;
+}
+#earth {
+	background-image: url('../images/earth.jpg');
 	background-position: center 25px;
 	background-repeat: no-repeat;
 }
