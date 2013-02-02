@@ -24,6 +24,9 @@ $title = 'Sponsors';
 		<a class="sponsor-link" href="http://www.wrotenlaw.com/" target="_blank">
 			<div class="sponsor" style="background-image: url('images/wa.jpg');"></div>
 		</a>
+		<a class="sponsor-link" href="http://www.goldenstatecellular.com/" target="_blank">
+			<div class="sponsor" style="background-image: url('images/golden_state_cellular_logo.png');"></div>
+		</a>
 		
 		<div class="clear"></div>
 	</div>
