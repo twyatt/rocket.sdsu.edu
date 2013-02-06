@@ -49,3 +49,20 @@ body {
 .sponsor-link:hover {
 	text-decoration: none;
 }
+
+.rocket_image_row img {
+	float: left;
+	padding-left: 10px;
+}
+.rocket_image_row img.first {
+	padding-left: 0px;
+}
+
+.rocket_image_stacked {
+	padding-top: 10px;
+}
+
+.rocket_text {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}

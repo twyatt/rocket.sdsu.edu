@@ -1,6 +1,9 @@
 		<h1>Delta Phoenix</h1>
 		<span class="launch-date">Launched May 21, 2005</span>
 		
+		<br />
+		<br />
+		
 		<img src="images/delta_phoenix_launch_composite.jpg" />
 		
 		<video width="321" height="240" controls>
