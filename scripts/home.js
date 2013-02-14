@@ -1,4 +1,5 @@
 google.load("feeds", "1");
+$(document).ready(initialize_photos);
 
 
 // http://stackoverflow.com/questions/1643320/get-month-name-from-date-using-javascript
@@ -26,6 +27,46 @@ function formatAMPM(date) {
 	minutes = minutes < 10 ? '0'+minutes : minutes;
 	var strTime = hours + ':' + minutes + ampm;
 	return strTime;
+}
+
+
+function initialize_photos() {
+	MAX_PHOTOS = 3;
+	
+	$.ajax({
+		url: 'http://graph.facebook.com/391630404240936/photos',
+		data: null,
+		success: function(data, textStatus, jqXHR) {
+			var container = $('#master-content-right');
+			
+			for (i = 0; i < data.data.length && i < MAX_PHOTOS; i++) {
+				entry = data.data[i];
+				
+				width = entry.width;
+				height = entry.height;
+				img = entry.picture;
+				link = entry.link;
+				var date = new Date(entry.created_time);
+				
+				var dateText = date.getMonthName() + ' ' + date.getDate();
+				if (date.getFullYear() != new Date().getFullYear()) {
+					dateText += ', ' + date.getFullYear();
+				}
+				
+				var link = $('<a class="photo-item" href="' + entry.link + '" target="_blank">');
+				var image = $('<img src="' + img + '" class="photo-image" alt="Photo Item">');
+				var publishedDate = $('<div class="date">' + dateText + '</div>');
+				var clear = $('<div class="clear"></div>');
+				
+				link.append(image);
+				link.append(publishedDate);
+				link.append(clear);
+				
+				container.append(link);
+			}
+		},
+		dataType: 'json'
+	});
 }
 
 

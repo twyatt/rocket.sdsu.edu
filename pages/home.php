@@ -30,8 +30,6 @@ EOT;
 						<h2><a href="gallery">GALLERY</a></h2>
 						<a class="more-right" href="gallery">see more pictures</a>
 					</div>
-					
-					Photo feed coming soon.
 				</div>
 				
 				<div class="clear"></div>

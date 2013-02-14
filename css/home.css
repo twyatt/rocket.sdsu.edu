@@ -193,3 +193,19 @@
 #master-content-center .date {
 	color: #DAC792;
 }
+
+.photo-item {
+	display: block;
+	padding-bottom: 5px;
+}
+.photo-image {
+	display: block;
+	background-color: #40340E;
+	border: 1px solid #5E4F28;
+	color: #000000;
+	margin: 5px auto;
+	padding: 3px;
+}
+#master-content-right .date {
+	text-align: center;
+}
