@@ -34,7 +34,7 @@ function initialize_photos() {
 	MAX_PHOTOS = 3;
 	
 	$.ajax({
-		url: 'http://graph.facebook.com/391630404240936/photos',
+		url: 'http://graph.facebook.com/450487865021856/photos',
 		data: null,
 		success: function(data, textStatus, jqXHR) {
 			var container = $('#master-content-right');
