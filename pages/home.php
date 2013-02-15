@@ -27,8 +27,8 @@ EOT;
 				
 				<div id="master-content-right">
 					<div class="container">
-						<h2><a href="gallery">GALLERY</a></h2>
-						<a class="more-right" href="gallery">see more pictures</a>
+						<h2><a href="gallery" target="_blank">GALLERY</a></h2>
+						<a class="more-right" href="gallery" target="_blank">see more pictures</a>
 					</div>
 				</div>
 				

@@ -24,7 +24,7 @@
 							<a href="events">Events</a>
 						</li>
 						<li>
-							<a href="gallery">Gallery</a>
+							<a href="gallery" target="_blank">Gallery</a>
 						</li>
 						<li>
 							<a href="meetings">Meetings</a>
@@ -45,7 +45,7 @@
 						</p>
 						<p>
 							<br />
-							Blockhouse<br />
+							<a id="meetings-link" href="meetings">Blockhouse</a><br />
 							5500 Campanile Drive<br />
 							San Diego, CA 92182<br />
 							<br />
