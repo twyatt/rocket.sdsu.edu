@@ -149,11 +149,19 @@ function initialize_events() {
 				for (var i = 0; i < response.items.length; i++) {
 					var entry = response.items[i];
 					
-					var date = new Date(entry.start.dateTime);
+					var date;
+					var dateText;
+					if (entry.start.dateTime == null) {
+						date = new Date(entry.start.date);
+						dateText = date.getMonthName() + ' ' + date.getDate();
+					} else {
+						date = new Date(entry.start.dateTime);
+						dateText = date.getMonthName() + ' ' + date.getDate() + ' at ' + formatAMPM(date);
+					}
 					
 					var item = $('<div class="event-item"></div>');
 					var title = $('<div class="event-title"><a href="' + entry.htmlLink + '" target="_blank">' + entry.summary + '</a></div>');
-					var startDate = $('<div class="date">' + date.getMonthName() + ' ' + date.getDate() + ' at ' + formatAMPM(date) + '</div>');
+					var startDate = $('<div class="date">' + dateText + '</div>');
 					var clear = $('<div class="clear"></div>');
 					
 					item.append(title);
