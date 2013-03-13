@@ -16,6 +16,14 @@ Date.prototype.getShortMonthName = function () {
 	return this.getMonthName().substr(0, 3);
 };
 
+// parse a date in yyyy-mm-dd format
+// http://stackoverflow.com/questions/2488313/javascripts-getdate-returns-wrong-date
+function parseDate(input) {
+	var parts = input.match(/(\d+)/g);
+	// new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
+	return new Date(parts[0], parts[1]-1, parts[2]); // months are 0-based
+}
+
 
 // http://stackoverflow.com/questions/8888491/how-do-you-display-javascript-datetime-in-12-hour-am-pm-format
 function formatAMPM(date) {
@@ -152,7 +160,7 @@ function initialize_events() {
 					var date;
 					var dateText;
 					if (entry.start.dateTime == null) {
-						date = new Date(entry.start.date);
+						date = parseDate(entry.start.date);
 						dateText = date.getMonthName() + ' ' + date.getDate();
 					} else {
 						date = new Date(entry.start.dateTime);
