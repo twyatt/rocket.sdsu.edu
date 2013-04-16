@@ -97,7 +97,7 @@ function initialize_news() {
 				*/
 				
 				// parse for first image in blog entry to use as thumbnail image
-				var images = $(entry.content).find('img');
+				var images = $('<div>' + entry.content + '</div>').find('img');
 				var img;
 				if (images.length == 0) {
 					// blog entry has no images, so we use a generic news item image
