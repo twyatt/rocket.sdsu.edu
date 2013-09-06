@@ -19,6 +19,20 @@ EOT;
 		
 		<ul class="rockets">
 			<li class="first">
+				<a onclick="show('ender'); return false;" class="rocket-link">
+					<img src="images/ender-thumbnail.jpg" />
+					<span class="rocket-name">Ender</span>
+					<span class="launch-date">Estimated Launch 2014</span>
+				</a>
+			</li>
+			<li>
+				<a onclick="show('swiss-miss2'); return false;" class="rocket-link">
+					<img src="images/swiss-miss2-thumbnail.jpg" />
+					<span class="rocket-name">Swiss Miss II</span>
+					<span class="launch-date">Launched August 17, 2013</span>
+				</a>
+			</li>
+			<li>
 				<a onclick="show('swiss-miss'); return false;" class="rocket-link">
 					<img src="images/swiss-miss-thumbnail.jpg" />
 					<span class="rocket-name">Swiss Miss</span>
@@ -51,6 +65,18 @@ EOT;
 	</div>
 	
 	<div class="clear"></div>
+	
+	<div id="ender" class="rocket" style="display: none;">
+<?php
+include_once('partials/ender.php');
+?>
+	</div>
+	
+	<div id="swiss-miss2" class="rocket" style="display: none;">
+<?php
+include_once('partials/swiss-miss2.php');
+?>
+	</div>
 	
 	<div id="swiss-miss" class="rocket" style="display: none;">
 <?php

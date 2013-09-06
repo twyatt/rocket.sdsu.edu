@@ -37,6 +37,7 @@ ul.rockets li {
 	text-align: center;
 	width: 200px;
 	padding-left: 30px;
+	padding-top: 20px;
 }
 ul.rockets li.first {
 	padding-left: 0;
