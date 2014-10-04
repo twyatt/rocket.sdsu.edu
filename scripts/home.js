@@ -140,7 +140,7 @@ function initialize_events() {
 		
 		var request = gapi.client.calendar.events.list({
 			'calendarId': 'rocketproject.sdsu@gmail.com',
-			'timeMin': now,
+			'timeMin': now.toISOString(),
 			'singleEvents': true,
 			'fields': 'items(description,end,htmlLink,id,location,start,summary)',
 			'orderBy': 'startTime',
