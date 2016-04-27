@@ -22,7 +22,7 @@ EOT;
 				<a onclick="show('galactic-aztec'); return false;" class="rocket-link">
 					<img src="images/galactic-thumbnail.jpg" />
 					<span class="rocket-name">Galactic Aztec</span>
-					<span class="launch-date"> Launch: April 2015</span>
+					<span class="launch-date">Launched: April 18th, 2015</span>
 				</a>
 			</li>
 			<li>
