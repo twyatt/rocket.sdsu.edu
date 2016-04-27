@@ -15,14 +15,14 @@ EOT;
 
 <div class="page">
 	<div class="rocket">
-		<h1>Rockets</h1>
+		<h1>The Rockets,</h1>
 		
 		<ul class="rockets">
 			<li class="first">
-				<a onclick="show('ender'); return false;" class="rocket-link">
-					<img src="images/ender-thumbnail.jpg" />
-					<span class="rocket-name">Ender</span>
-					<span class="launch-date">Estimated Launch 2014</span>
+				<a onclick="show('galactic-aztec'); return false;" class="rocket-link">
+					<img src="images/galactic-thumbnail.jpg" />
+					<span class="rocket-name">Galactic Aztec</span>
+					<span class="launch-date"> Launch: April 2015</span>
 				</a>
 			</li>
 			<li>
@@ -66,9 +66,9 @@ EOT;
 	
 	<div class="clear"></div>
 	
-	<div id="ender" class="rocket" style="display: none;">
+	<div id="galactic-aztec" class="rocket" style="display: none;">
 <?php
-include_once('partials/ender.php');
+include_once('partials/galactic-aztec.php');
 ?>
 	</div>
 	

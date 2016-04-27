@@ -25,10 +25,10 @@
 						<div class="description">
 							<h3>Rocketeers</h3>
 							<div class="item-content">
-								Rocket Project featured on the SDSU homepage!
+								Rocket Project featured on CBS8!
 							</div>
 							<div class="item-more">
-								<a href="http://newscenter.sdsu.edu/sdsu_newscenter/news.aspx?s=73975">Read More</a>
+								<a href="http://www.cbs8.com/story/29645111/lift-off-for-future-rocket-scientists-at-sdsu">Read More</a>
 							</div>
 						</div>
 					</div>
